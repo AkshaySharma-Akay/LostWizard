@@ -23,6 +23,9 @@ for(i=0;i<square.length;++i){
 function resetBoard(){
     active = 'X';
     result.innerHTML = heading;
+    square.forEach(element => {
+        element.disabled = false;
+    });
     for(i=0;i<3;++i)
     {
         for(j=0;j<3;j++)
@@ -39,12 +42,16 @@ function checkEquals(a,b,c) {
     return false;
 }
 function checkStatus(){
-    console.log(matrix);
+    // console.log(matrix);
     let c =0;
     for(i=0;i<3;++i)
         for(j=0;j<3;j++)
             if(matrix[i][j]!='')
                 c++;
+    if(c == 9){
+        result.innerHTML = "It's a Draw!";
+        setTimeout(resetBoard,3000);
+    }
     if(c % 2 == 0)
         player = 2;
     else
@@ -94,6 +101,9 @@ function updateSquare(){
     status = checkStatus();
     if(status == 'true'){
         result.innerHTML = "Player " + player + " won the game";
+        square.forEach(element => {
+            element.disabled = true;
+        });
         setTimeout(resetBoard,3000);
     }
 }
