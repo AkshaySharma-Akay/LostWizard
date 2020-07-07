@@ -1,2 +1,3 @@
-# automate-tweet
-1st Vanilla JS Project
+## Projects With Vanilla JS
+
+- [Tic Tac Toe](tictactoe/index.html)
