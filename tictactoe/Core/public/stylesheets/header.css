@@ -1,0 +1,21 @@
+#header{
+    padding:15px 100px;
+    text-align: center;
+    background-color: #6C63FF;
+    display: flex;
+    justify-content: space-between;
+}
+#header a{
+    text-decoration: none;
+    color:#fff;
+    text-transform: uppercase;
+}
+#header-title{
+    font-size:20px;
+    color:#fff;
+}
+#header-menu a{
+    display: inline-block;
+    padding:5px 15px;
+    color:#fff;
+}
