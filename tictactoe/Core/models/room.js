@@ -1,23 +1,60 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const playerSchema = new mongoose.Schema({
-    _id: new mongoose.Types.ObjectId().toHexString(),
-    username: String,
-    win: Number,
-    loss: Number
+var playerSchema = new mongoose.Schema({
+    username: {
+        type: String,
+        required: true,
+        unique:false,
+    },
+    win: {
+        type: Number,
+        default: 0,
+        required: false
+    },
+    loss: {
+        type: Number,
+        default: 0,
+        required: false
+    }
 })
-const boardSchema = new mongoose.Schema({
+var boardSchema = new mongoose.Schema({
     matrix: [Number],
     status: Boolean
 })
 
-const roomSchema = new mongoose.Schema({
-    _id: new mongoose.Types.ObjectId().toHexString(),
-    player: [playerSchema],
-    board: boardSchema,
-    draws: Number,
-    matches: Number
+const roomSchema = new Schema({
+    player: {
+        type: [playerSchema],
+        required: true,
+    },
+    active: {
+        type: Boolean,
+        default: false
+    },
+    board: {
+        type: boardSchema,
+        required: false,
+    },
+    draws: {
+        type: Number,
+        required: false,
+        default: 0
+    },
+    totalmatches: {
+        type: Number,
+        required: false,
+        default: 0
+    },
     // TODO: Delete the room in 30 mins after creation
-})
-const Room = mongoose.Model(roomSchema);
-module.exports = Room;
+    expire_at: {
+        // expires after 30 mins = 1800 secs
+        type: Date,
+        default: Date.now,
+        expires: 1800
+    }
+}, {
+    timestamps: true
+});
+const Rooms = mongoose.model('Room', roomSchema);
+module.exports = Rooms;
