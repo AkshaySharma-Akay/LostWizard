@@ -38,5 +38,17 @@ roomRouter.route('/allrooms')
             }, (err) => next(err))
             .catch((err) => next(err));
     })
+
+roomRouter.route('/:roomId')
+.get((req,res,next) => {
+    Rooms.findById(req.params.roomId)
+    .then((room) => {
+        res.statusCode = 200;
+        res.setHeader('Content-Type','application/json');
+        console.log("Room details : " + room);
+        res.json(room);
+    },(err) => next(err))
+    .catch((err) => next(err));
+})
   
 module.exports = roomRouter;
