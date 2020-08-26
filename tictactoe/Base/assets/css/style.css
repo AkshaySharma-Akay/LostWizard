@@ -2,7 +2,7 @@
     padding: 0px 30px;
 }
 
-.form-container {
+#form-wrapper , #result-wrapper{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,6 +10,7 @@
     align-content: center;
     min-height: 100vh;
 }
+
 h1 {
     padding: 10px 0px;
     font-size: 21px;
@@ -22,39 +23,44 @@ form {
     text-align: center;
     min-width: 270px;
     background-color: #fff;
-    padding:20px;
+    padding: 20px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
 }
-form ul{
+
+form ul {
     list-style-type: none;
-    margin:0px;
-    padding:0px;
+    margin: 0px;
+    padding: 0px;
     text-align: left;
 }
-form label{
+
+form label {
     font-size: 16px;
     display: block;
-    padding:5px 0px;
+    padding: 5px 0px;
 }
-form input, form select{
+
+form input, form select {
     width: calc(100% - 40px);
-    margin:5px 0px;
+    margin: 5px 0px;
     padding: 5px 20px;
     border-radius: 5px;
     border: none;
     outline: #f87666;
-    color:#450920;
-    font-size: 14px;;
+    color: #450920;
+    font-size: 14px;
+    ;
     line-height: 16px;
     background-color: #efefef;
 }
-form select{
-    width:100%;
+
+form select {
+    width: 100%;
 }
 
-form li button {
+button {
     margin: 15px 0px;
     display: block;
     width: 100%;
@@ -70,12 +76,59 @@ form li button {
     cursor: pointer;
     transition: all 0.5s ease;
 }
-form li button:hover{
-    background-color:#450920;
-    color:#efefef;
+
+button:hover {
+    background-color: #450920;
+    color: #efefef;
 }
-@media all and (max-width:768px){
-    form{
-        width:calc(100% - 40px);
+
+@media all and (max-width:768px) {
+    form {
+        width: calc(100% - 40px);
     }
+}
+
+/* result */
+
+#result-wrapper{
+    display:none;
+}
+#result {
+    text-align: center;
+    min-width: 270px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+#result h6{
+    font-size: 16px;
+    margin:10px 0px;
+}
+#result-url{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#result-url button{
+    width:auto;
+    font-size: 14px;
+    border-radius:0px 5px 5px 0px;
+    padding:7px;
+    margin:0px;
+}
+#result-url span{
+    background-color: #777;
+    color:#fff;
+    padding: 7px 10px;
+    border-radius: 5px 0px 0px 5px;
+}
+
+#gameurl {
+    display: block;
+    padding: 7px;
+    font-size: 14px;
+    color: #450920;
+    line-height: 16px;
 }
