@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+var cors = require('cors')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -12,6 +13,7 @@ const roomRouter = require('./routes/room')
 
 var app = express();
 
+app.use(cors());
 // connecting to mongodb db
 
 mongoose.connect("mongodb://localhost:27017/ti", {
