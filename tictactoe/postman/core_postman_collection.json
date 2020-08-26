@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "eddea2a0-d3ba-41d0-ae3c-001b8ea48cc2",
+		"name": "Core",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Insert Room",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"player\" : {\n        \"username\" : \"Akshay\"\n    },\n    \"active\" : false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUr}}/room/",
+					"host": [
+						"{{baseUr}}"
+					],
+					"path": [
+						"room",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Rooms",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/room/allrooms",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"room",
+						"allrooms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete All Rooms",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/room/allrooms",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"room",
+						"allrooms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch room details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/room/5f43e774196ed017b952f5a0",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"room",
+						"5f43e774196ed017b952f5a0"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
